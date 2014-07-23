@@ -1,0 +1,336 @@
+<!doctype html>  
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Building Native Apps with Cordova</title>
+        <meta name="description" content="">
+        <meta name="author" content="Wren Reynolds Vinh Pham Rose Rocchio">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/theme/default.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            // If the query includes 'print-pdf' we'll use the PDF print sheet
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Used to fade in a background when a specific slide state is reached -->
+            <div class="state-background"></div>
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+            
+                <section>
+                    <hgroup>
+                        <h2>Building Native Apps with Cordova</h2>
+                        <h4>Cordova, Phonegap, iOS, Ohmage</h4>
+                    </hgroup>
+                    <footer>
+                        <p>Wren Reynolds / <a href="mailto:wreynolds@oit.ucla.edu">wreynolds@oit.ucla.edu</a></p>
+                        <p>Vinh Pham / <a href="mailto:vpham@oit.ucla.edu">vpham@oit.ucla.edu</a></p>
+                        <p>Rose Rocchio / <a href="mailto:rrocchio@oit.ucla.edu">rrocchio@oit.ucla.edu</a> / <a href="http://twitter.com/RoseRocchio" target="_blank">@RoseRocchio</a></p>
+                    </footer>
+                </section>
+                
+                <section>
+                    <h2>Overview</h2>
+                    <ol>
+                        <li class="fragment">What is Native and Non-Native?</li>
+                        <li class="fragment">What is <strong class="highlight">Cross-platform</strong>?</li>
+                        <li class="fragment">Writing <strong class="highlight">Cross-platform</strong> mobile apps</li>
+                        <li class="fragment">Some <strong class="highlight">Cross-platform App Framework</strong> Solutions</li>
+                        <li class="fragment">Using <strong class="highlight">Phonegap / Cordova</strong></li>
+                        <li class="fragment">Cordova Case study with <strong class="highlight">ohmage MWF</strong></li>
+                        <li class="fragment">Special Considerations</li>
+                    </ol>
+                </section>
+                
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>what is Native? What is non-Native?</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Native</h2>
+                        <ul>
+                            <li class="fragment">Functionality - is specific to Device Hardware and Device OS</li>
+                            <li class="fragment">Code - written in a special, lower-level language for the device and OS. <strong class="highlight">Objective-C, Java</strong></li>
+                            <li class="fragment">Performance - can be faster and take full advantage of device hardware</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Non - Native</h2>
+                        <ul>
+                            <li class="fragment">Functionality - is general to multiple devices' hardware and devices' OSes</li>
+                            <li class="fragment">Code - written in higher-level language. <strong class="highlight">Javascript</strong></li>
+                            <li class="fragment">Performance - slower touch response, greater memory usage, and slower computations</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Choosing Native or Non - Native</h2>
+                        <ul>
+                            <li class="fragment">Does the app require high performance?</li>
+                            <li class="fragment">Does the app require heavy usage of device hardware functionality?</li>
+                            <li class="fragment">How many devices does the app need to run on?</li>
+                            <li class="fragment">How many developer resources are available?</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>What is <strong class="highlight">Cross-platform</strong>?</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What do multiple devices have in common?</h2>
+                        <ul>
+                            <li class="fragment bad">Hardware?</li>
+                            <li class="fragment bad">OS?</li>
+                            <li class="fragment bad">Functionality?</li>
+                            <li class="fragment bad">Screen size?</li>
+                            <li class="fragment good"><strong class="highlight">None of the above!</strong></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Let's try again...</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What do multiple devices have in common?</h2>
+                        <ul>
+                            <li class="fragment good">A web browser?</li>
+                            <li class="fragment good">HTML?</li>
+                            <li class="fragment good">Javascript?</li>
+                            <li class="fragment good">CSS?</li>
+                            <li class="fragment good"><strong class="highlight">All of the above!</strong></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>How do I make a cross-platform app with HTML, Javascript, and CSS?</h2>
+                        <p class="fragment"><strong class="highlight">Frameworks!</strong></p>
+                        <ul>
+                            <li class="fragment">Frameworks turn HTML, Javascript, and CSS into Native Code.</li>
+                            <li class="fragment">Your HTML can be a bunch of web pages.</li>
+                            <li class="fragment">Or it can be something more complicated, like a Javascript application. <strong class="highlight">Backbone.js, Ember.js, Knockout.js</strong></li>
+                            <li class="fragment good">(Case study) When we built <strong class="highlight">ohmage</strong>, we started with a simple series of pages. But when it got complex we made it into a Javascript application.</li>
+                        </ul>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 200px;">
+                            <h2>Writing <strong class="highlight">Cross-platform</strong> mobile apps</h2>
+                            <p>Challenges and Comparisons</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Cross-platform app challenges</h2>
+                        <ul>
+                            <li class="fragment">Performance</li>
+                            <li class="fragment">User Experience</li>
+                            <li class="fragment">Complexity</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Cross-platform app compared to mobile websites</h2>
+                        <ul>
+                            <li class="fragment">Cross Platform apps need to work while offline</li>
+                            <li class="fragment">Cross Platform apps can access device hardware functionality (depending on the Framework...) <strong class="highlight">Camera, GPS</strong></li>
+                            <li class="fragment">Cross Platform apps may be able to use native OS features. <strong class="highlight">Notifications, Application Open/Close Events</strong></li>
+                            <li class="fragment">Mobile websites lack the "App Look"</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="feature" style="margin-top: 200px;">
+                            <h2>What are these "frameworks" anyway?</h2>
+                            <p>They've been referenced a few times...</p>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="feature">
+                            <h2>Some <strong class="highlight">Cross-platform App Framework</strong> Solutions</h2>
+                            <p>Appcelerator Titanium, Trigger.io, Phonegap / Cordova</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Appcelerator Titanium</h2>
+                        <p>An open-source cross platform mobile app framework with the Titanium SDK.</p>
+                        <ul>
+                            <li class="fragment">Features an API for native UI elements: menus, dialog boxes, etc.</li>
+                            <li class="fragment">Most apps require a Titanium license</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Trigger.io</h2>
+                        <p>"A multiplatform tool for converting HTML5/JavaScript into applications for Android, iOS, Chrome, Firefox and Windows mobile devices. It is similar to PhoneGap, Sencha, and Appcelerator, but claims to be faster and better." - BOX UK</p>
+                        <ul>
+                            <li class="fragment">Features an API for native UI elements: menus, dialog boxes, etc.</li>
+                            <li class="fragment">Cloud-build platform, no need to build locally</li>
+                            <li class="fragment">Subscription-based access to cloud builds, reloads</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Cordova / Phonegap</h2>
+                        <p>An open-source cross platform mobile app framework with a plugin system for access to native device APIs.</p>
+                        <ul>
+                            <li class="fragment">Features an API for native device features like Camera and Geolocation</li>
+                            <li class="fragment">No license required to build Phonegap apps locally</li>
+                        </ul>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Using <strong class="highlight">Phonegap / Cordova</strong></h2>
+                            <p>Let's install and run a basic Phonegap app in a <strong class="highlight">live demonstration</strong>!</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2><strong class="highlight">Phonegap / Cordova</strong> Demonstration</h2>
+                        <p><a href="http://phonegap.com/install">Installing Phonegap</a></p>
+                        <p>In the command line:</p>
+                        <ul>
+                            <li><code>cordova create folder-name</code></li>
+                            <li><code>cd folder-name</code></li>
+                            <li><code>cordova add platform ios</code></li>
+                            <li><code>cordova build ios</code></li>
+                        </ul>
+                        <p>then open <code>platforms/ios/folder-name.xcodeproj</code> in XCode</p>
+                    </section>
+                </section>
+                
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Cordova Case study with <strong class="highlight">ohmage MWF</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Native Features Discussion</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>iOS Device Demo</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Web Browser Demo</h2>
+                        </div>
+                    </section>
+                </section>
+
+                
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Special Considerations</h2>
+                            <p>There are always exceptions...</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>iOS Oddities</h2>
+                        <ul>
+                            <li class="fragment bad">"It doesn't run on my device"</li>
+                            <li class="fragment">Installing and setting up XCode</li>
+                            <li class="fragment">Developer Licensing, Provisioning Profiles, Certificates</li>
+                            <li class="fragment">App Store Submission and Approval</li>
+                            <li class="fragment">App Sandboxing and limited access to other features</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Android Oddities</h2>
+                        <ul>
+                            <li class="fragment bad">"It doesn't run on these 10,000 other devices"</li>
+                            <li class="fragment">Device Fragmentation</li>
+                            <li class="fragment">Intents</li>
+                            <li class="fragment">Hardware buttons Back, Home, Search, and Info</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>General Cross-Platform Oddities</h2>
+                        <ul>
+                            <li class="fragment">Different UI Behaviors and User Expectations</li>
+                            <li class="fragment">Different implementations of software functionality. <strong class="highlight">Local Notifications</strong></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Solutions to iOS, Android, and Cross-Platform issues</h2>
+                        <ul>
+                            <li class="fragment">Test</li>
+                            <li class="fragment">Test</li>
+                            <li class="fragment">Test</li>
+                            <li class="fragment">Know your users</li>
+                            <li class="fragment">Test</li>
+                            <li class="fragment">Test on devices, test with users, test in simulators, test in emulators, test in browsers</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>THANK YOU</h1>
+                    <h3>Any Questions?</h3>
+                    <p><br><a href="http://wrenr.github.io/cordova-presentation/" target="_blank">wrenr.github.io/cordova-presentation/</a></p>
+                    <br>
+                    <p>
+                        <small>
+                            <a href="https://github.com/wrenr" target="_blank">wrenr [GitHub]</a>
+                            / <a href="https://github.com/vpham21" target="_blank">vpham21 [GitHub]</a>
+                        </small>
+                    </p>
+                </section>
+            </div>
+
+            <!-- The navigational controls UI -->
+            <aside class="controls">
+                <a class="left" href="#">&#x25C4;</a>
+                <a class="right" href="#">&#x25BA;</a>
+                <a class="up" href="#">&#x25B2;</a>
+                <a class="down" href="#">&#x25BC;</a>
+            </aside>
+            <!-- Presentation progress bar -->
+            <div class="progress"><span></span></div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+                        controls: true,
+                        progress: true,
+                        history: true,
+                        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+                                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                                { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                        ]
+                });
+        </script>
+    </body>
+</html>
