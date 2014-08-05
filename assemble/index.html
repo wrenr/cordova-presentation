@@ -1,0 +1,427 @@
+<!doctype html>  
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Crowd-Sourcers Assemble! Hands-on Mobile Data Collection</title>
+        <meta name="description" content="">
+        <meta name="author" content="Wren Reynolds Vinh Pham Rose Rocchio">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/theme/default.css">
+        <link rel="stylesheet" href="../lib/css/zenburn.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script>
+            // If the query includes 'print-pdf' we'll use the PDF print sheet
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Used to fade in a background when a specific slide state is reached -->
+            <div class="state-background"></div>
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+            
+                <section>
+                    <hgroup>
+                        <h2>Crowd-Sourcers Assemble!</h2>
+                        <h4>Hands-on Mobile Data Collection</h4>
+                    </hgroup>
+                    <footer>
+                        <p>Wren Reynolds / <a href="mailto:wreynolds@oit.ucla.edu">wreynolds@oit.ucla.edu</a></p>
+                        <p>Vinh Pham / <a href="mailto:vpham@oit.ucla.edu">vpham@oit.ucla.edu</a></p>
+                        <p>Rose Rocchio / <a href="mailto:rrocchio@oit.ucla.edu">rrocchio@oit.ucla.edu</a> / <a href="http://twitter.com/RoseRocchio" target="_blank">@RoseRocchio</a></p>
+                    </footer>
+                </section>
+                
+                <section>
+                    <h2>Overview</h2>
+                    <ol>
+                        <li class="fragment">Preparation!</li>
+                        <li class="fragment">The Background on <strong class="highlight">Mobile Data Collection (MDC)</strong></li>
+                        <li class="fragment">Types of <strong class="highlight">MDC</strong></li>
+                        <li class="fragment">Passive, Public, Crowdsource, Private</li>
+                        <li class="fragment"><strong class="highlight">MDC</strong> Exercise: Ohmage</li>
+                        <li class="fragment"><strong class="highlight">MDC</strong> Growth Continues</li>
+                    </ol>
+                </section>
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Preparation!</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h4>Install our Mobile Data Collection App</h4>
+                        <p><img src="img/icon-ohmage-mwf.png"></p>
+                        <ul>
+                            <li>Download the data collection app:</li>
+                            <li>iOS - get it from the App Store - "<strong class="highlight">ohmage MWF</strong>"</li>
+                            <li>Android - Google Play - "<strong class="highlight">ohmage</strong>"</li>
+                            <li class="good">(We'll show this info again)</li>
+                        </ul>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>The Background on <strong class="highlight">Mobile Data Collection (MDC)</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Student Smartphone Ownership and Interaction</h2>
+                        <ul>
+                            <li class="fragment">Overall US smartphone ownership is 58% (Jan 2014)</li>
+                            <li class="fragment">College-aged ownership is 83%</li>
+                            <li class="fragment">Undergrads have 2-3 internet-capable devices</li>
+                            <li class="fragment">They want to use them!</li>
+                            <li class="fragment">Interact with their institution and coursework</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Growth of <strong class="highlight">Bring-your-own-everything (BYOE)</strong></h2>
+                        <ul>
+                            <li class="fragment">data gathering <em>in the field</em> using these devices</li>
+                            <li class="fragment">Past: tablets and laptops</li>
+                            <li class="fragment">Now: "companion" devices</li>
+                            <li class="fragment">Measure habits, publish opinions, track activities</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Mobile Data Collection (MDC)</h2>
+                        <ul>
+                            <li class="fragment">gathering with a <em>personal</em> mobile device</li>
+                            <li class="fragment">Cheaper, easier, more ubiquitous</li>
+                            <li class="fragment">Complex. Phones have camera, microphone, accelerometer, GPS, etc.</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Types of <strong class="highlight">MDC</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>The 4 Types of MDC</h2>
+                        <ul>
+                            <li class="fragment">Passive</li>
+                            <li class="fragment">Public</li>
+                            <li class="fragment">Crowdsourced</li>
+                            <li class="fragment">Private</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Passive <strong class="highlight">MDC</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Passive <strong class="highlight">MDC</strong></h2>
+                        <ul>
+                            <li class="fragment">In the background, no interaction needed</li>
+                            <li class="fragment">Just install an app and turn it on</li>
+                            <li class="fragment">Collects data such as accelerometer, GPS, SMS log</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Passive <strong class="highlight">MDC</strong> Example: Actigraphy</h2>
+                        <ul>
+                            <li class="fragment">Collects data on rest and activity cycles</li>
+                            <li class="fragment">Past: custom devices like Pedometers</li>
+                            <li class="fragment">Actigraph data + GPS location data = Visual Map!</li>
+                            <li class="fragment">Some Higher Ed Uses: gauge use of campus bike paths, health studies, and more</li>
+                        </ul>
+                        <p class="fragment"></p>
+                    </section>
+                    <section>
+                        <h4>Passive MDC: Actigraphy</h4>
+                        <p><img style="width: 75%" src="img/passive-mdc-data-vis.png"></p>
+                        <p>Mobilizing Health <a href="http://www.cs.cornell.edu/~destrin/resources/talks/2012-july-mobilizinghealth.pdf">(link)</a></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Public <strong class="highlight">MDC</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Public <strong class="highlight">MDC</strong></h2>
+                        <ul>
+                            <li class="fragment">Gathers data from public social media apps like Twitter, Facebook, Foursquare</li>
+                            <li class="fragment">Combine Social media data with location data for interesting visualizations</li>
+                            <li class="fragment">Here, research intent is defined after public data have been created</li>
+                            <li class="fragment">Researchers can use existing data sets, but they have an expiry date</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Public <strong class="highlight">MDC</strong> Example: Aggregation with GIS</h2>
+                        <ul>
+                            <li class="fragment">Show activity after the Japan Tohoku earthquake and tsunami</li>
+                            <li class="fragment">Location + Twitter postings</li>
+                            <li class="fragment">Volunteers from several institutions organized this info by hashtag, requests for help, info about evacuation, etc.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Public MDC: Aggregation</h4>
+                        <p><img style="width: 75%" src="img/public-mdc-japan-earthquake.png"></p>
+                        <p>Japan Tohou Earthquake <a href="http://gis.ats.ucla.edu/japan/">(link)</a></p>
+                    </section>
+                    <section>
+                        <h2>Public <strong class="highlight">MDC</strong> Example: Social Media and GPS Data Viz</h2>
+                        <ul>
+                            <li class="fragment">University administrations can use BYOE</li>
+                            <li class="fragment"><strong class="highlight">Social.Chapman</strong>, collecting content from Chapman University's Facebook, Twitter, Instagram, Wordpress communities</li>
+                            <li class="fragment">Aggregated in real time, know "what is happening now"</li>
+                            <li class="fragment">searchable, archived database of social media activity</li>
+                            <li class="fragment">ID trends, evaluate branding strategies, monitor consistency of community's response</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Crowdsourced <strong class="highlight">MDC</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Crowdsourced <strong class="highlight">MDC</strong></h2>
+                        <ul>
+                            <li class="fragment">general public or an online community - "citizen scientists" - contributes collected content w/o compensation</li>
+                            <li class="fragment">Example: Saving humanity from asteroids! Nasa's "Asteroid Data Hunter" for large collections of sky images</li>
+                            <li class="fragment">Higher Ed: solving campus issues (like where to locate trash bins) but also academic field research</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Crowdsourced <strong class="highlight">MDC</strong> Example: Stopping Invaders (plants)!</h2>
+                        <ul>
+                            <li class="fragment"><strong class="highlight">What's Invasive</strong> gathers data from citizen scientists, started by UCLA, now maintained by U of Georgia</li>
+                            <li class="fragment">hikers and locals download an Android app and submit photos of invasive plants they see</li>
+                            <li class="fragment">GPS info included, scientists can locate plants and analyze growth patterns</li>
+                            <li class="fragment">300 participants, 11,000 observations, 200 invasive species ID'ed in 113  sites in US, Scandanavia, Middle East, Asia</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Crowdsourced MDC: Tracking</h4>
+                        <p><img style="width: 75%" src="img/crowdsourced-mdc-whats-invasive.png"></p>
+                        <p>What's Invasive! Community Data Collection <a href="http://www.whatsinvasive.org/index.cfm">(link)</a></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Private <strong class="highlight">MDC</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Private <strong class="highlight">MDC</strong></h2>
+                        <ul>
+                            <li class="fragment">Faculty, researchers, &amp; students ask: which data?</li>
+                            <li class="fragment">Mobile device data collected, uploaded to a server for private aggregation, research, analysis</li>
+                            <li class="fragment">Process and data are private</li>
+                            <li class="fragment">Image, GIS, timestamp, video, audio, accelerometer, and others</li>
+                            <li class="fragment">And use private social networks like Yammer, Jive, Chatter</li>
+                            <li class="fragment">For research, class field study, self-study, community improvement, health monitoring, political opinion gathering, more</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Private <strong class="highlight">MDC</strong> Example: STEM Education in High Schools</h2>
+                        <ul>
+                            <li class="fragment">Mobilize Project research program from UCLA's CENS, the NSF, The Computer Science Teacher's Assoc., Google, LA USD</li>
+                            <li class="fragment">Based on <strong class="highlight">ohmage</strong> platform</li>
+                            <li class="fragment">Engage high school students with STEM and computational thinking</li>
+                            <li class="fragment">Participatory Sensing hands-on, inquiry-based curricular units and teacher professional development for CS, math, and science high school classes</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Private MDC: Eduation</h4>
+                        <p><img style="width: 75%" src="img/private-mdc-mobilize.png"></p>
+                        <p>Mobilize: Snack Data Viz <a href="https://lausd.mobilizingcs.org/snackdemo/">(link)</a></p>
+                    </section>
+                    <section>
+                        <h2>Private <strong class="highlight">MDC</strong> Example: In-Field Classwork</h2>
+                        <ul>
+                            <li class="fragment">2013 Winter quarter, UCLA labor relations studies class study</li>
+                            <li class="fragment">Collected data from labor union members across campus</li>
+                            <li class="fragment">Class defined survey instruments for later interviews</li>
+                            <li class="fragment">Using mobile devices to upload data afterwards</li>
+                            <li class="fragment">Final survey instrument: 33 questions, 10-15 minutes with an interviewee, 225 interviews, 5 teams</li>
+                            <li class="fragment">Data analyzed, visualized across each team, combined with other teams</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>MDC Exercise: <strong class="highlight">ohmage</strong></h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>What is <strong class="highlight">ohmage</strong>?</h2>
+                        <ul>
+                            <li class="fragment">An open-source research platform</li>
+                            <li class="fragment"><strong class="highlight">ohmage</strong> collects data with surveys containing text responses, media, and custom fields</li>
+                            <li class="fragment">Dashboard: Define what information to collect, read reports</li>
+                            <li class="fragment">Mobile apps: The MDC side of <strong class="highlight">ohmage</strong></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Survey Creation Demo: <strong class="highlight">ohmage</strong> Dashboard</h2>
+                        <ul>
+                            <li>Creating a campaign</li>
+                            <li>A simple survey</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>Interactive Exercise: Time to Assemble!</h2>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>Prep for MDC with <strong class="highlight">ohmage</strong> on your device</h4>
+                        <p><img src="img/icon-ohmage-mwf.png"></p>
+                        <ul>
+                            <li>Download the data collection app:</li>
+                            <li>iOS - get it from the App Store - "<strong class="highlight">ohmage MWF</strong>"</li>
+                            <li>Android - Google Play - "<strong class="highlight">ohmage</strong>"</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Interactive Exercise: Background and Choosing Questions</h2>
+                        <ul>
+                            <li class="fragment">A UC Scenario: Drivers and Police</li>
+                            <li class="fragment">What questions to ask?</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Interactive Exercise: Assigning Roles</h2>
+                        <ul>
+                            <li>Take a card!</li>
+                            <li>Got a face card? Your role is <strong class="highlight">Police</strong></li>
+                            <li>Got any other card? Your role is <strong class="highlight">Driver</strong></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Interactive Exercise: Using the App</h2>
+                        <ul>
+                            <li>Open the <strong class="highlight">ohmage</strong> app on your device</li>
+                            <li><strong class="highlight">Driver</strong> Login info:<br />
+                            <code>username: ucsf.driver</code><br />
+                            <code>password: Conference9000!</code>
+                            </li>
+                            <li><strong class="highlight">Police</strong> Login info:<br />
+                            <code>username: ucsf.police</code><br />
+                            <code>password: Conference9000!</code>
+                            </li>
+                            <li>Exercise Rules Review</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Completing Your Survey</h2>
+                        <img style="width:20%;margin-top:5px" src="img/survey-steps/step1.png" />
+                        <img style="width:20%;margin-top:5px" src="img/survey-steps/step2.png" />
+                        <img style="width:20%;margin-top:5px" src="img/survey-steps/step3.png" />
+                        <img style="width:20%;margin-top:5px" src="img/survey-steps/step4.png" />
+                        <img style="width:20%;margin-top:5px" src="img/survey-steps/step5.png" />
+                    </section>
+
+
+                    <section>
+                        <h2>Interactive Exercise: Reviewing our Data</h2>
+                        <p>The <strong class="highlight">ohmage</strong> Dashboard
+                        </p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="feature" style="margin-top: 180px;">
+                            <h2>MDC Growth Continues</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>MDC Growth Continues</h2>
+                        <ul>
+                            <li class="fragment">Students want to use their devices</li>
+                            <li class="fragment">Researchers want to collect new data on participants like location-triggered surveys</li>
+                            <li class="fragment">Private MDC open-source platforms like <strong class="highlight">ohmage</strong> continue to emerge</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Experiment more with MDC!</h2>
+                        <ul>
+                            <li class="fragment">Collect new data</li>
+                            <li class="fragment">Less risk, less cost</li>
+                            <li class="fragment">Greater engagement</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>THANK YOU</h1>
+                    <h3>Any Questions?</h3>
+                    <p><br><a href="http://wrenr.github.io/cordova-presentation/" target="_blank">wrenr.github.io/cordova-presentation/assemble/</a></p>
+                    <br>
+                    <p>
+                        <small>
+                            <a href="https://github.com/wrenr" target="_blank">wrenr [GitHub]</a>
+                            / <a href="https://github.com/vpham21" target="_blank">vpham21 [GitHub]</a>
+                        </small>
+                    </p>
+                    <p><small>Introduction based on: Rocchio, Rosemary A., <em>An Introduction to BYOE Mobile Data Collection: An ECAR Mobile Strategy and Application Development Working Group Paper</em>, Educause Center for Analysis and Research, April 2014, research report</small>
+                    </p>
+                </section>
+            </div>
+
+            <!-- The navigational controls UI -->
+            <aside class="controls">
+                <a class="left" href="#">&#x25C4;</a>
+                <a class="right" href="#">&#x25BA;</a>
+                <a class="up" href="#">&#x25B2;</a>
+                <a class="down" href="#">&#x25BC;</a>
+            </aside>
+            <!-- Presentation progress bar -->
+            <div class="progress"><span></span></div>
+        </div>
+
+        <script src="../lib/js/head.min.js"></script>
+        <script src="../js/reveal.min.js"></script>
+        <script>
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+                        controls: true,
+                        progress: true,
+                        history: true,
+                        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+                        // Optional libraries used to extend on reveal.js
+                        dependencies: [
+                                { src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+                                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                { src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                { src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                                { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                        ]
+                });
+        </script>
+    </body>
+</html>
